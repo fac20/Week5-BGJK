@@ -4,17 +4,28 @@ const model = require("./model");
 
 // -------Home Handler------------------
 function home(request, response) {
-  const filePath = path.join(__dirname, "..", "public", "index.html");
-  fs.readFile(filePath, (error, file) => {
-    if (error) {
-      console.error(error);
-      response.writeHead(200, { "content-type": "text/html" });
-      response.end(`<h1>Not Found</h1>`);
-    } else {
-      response.writeHead(200, { "content-type": "text/html" });
-      response.end(file);
-    }
+  // let body = "";
+
+  // request.on("data", chunk => (body += chunk));
+  // // after getting the data then add it into our template
+  model.getUsers().then(users => {
+    template.compileSkeleton(template.compilePosts());
+    response.writeHead(200, { "content-type": "text/html" });
+    const html = template.compileSkeleton(template.compilePosts());
+    response.end(html);
   });
+
+  // const filePath = path.join(__dirname, "..", "public", "index.html");
+  // fs.readFile(filePath, (error, file) => {
+  //   if (error) {
+  //     console.error(error);
+  //     response.writeHead(200, { "content-type": "text/html" });
+  //     response.end(`<h1>Not Found</h1>`);
+  //   } else {
+  //     response.writeHead(200, { "content-type": "text/html" });
+  //     response.end(file);
+  //   }
+  //});
 }
 
 // --------Missing handler---------------

@@ -20,13 +20,16 @@ function compileSkeleton(content) {
     <body>
         <h1 class="heading-logo">SRV|VRS</h1>
         <main>
-            <form>
+            <form 
+            method ='POST'
+            >
                 <label for="name">Name :</label>
                 <input type="text" id="name" name="name" required>
                 <label for="location">Location :</label>
                 <input type="text" id="location" name="location" required>
                 <label for="post">Post :</label>
                 <input type="text" id="post" name="post" required>
+                <button type='submit'>SUBMIT</button>
             </form> 
            ${content}
 
@@ -38,17 +41,17 @@ function compileSkeleton(content) {
     `;
 }
 
-function compilePosts() {
-  model.getPosts().then(posts => {
-    let postsHtml = posts.map(post => {
+function compileUsers() {
+//   model.getPosts().then(posts => {
+    let usersHtml = users.map(user => {
       `
             <article class="post">
-                <p>Written by ${post.userid}</p>       
-                <p>${post.text_content}</p>    
+                <p>Written by ${user.id}</p>       
+                <p>${user.location}</p>    
             </article>  
            
     })`.join("");
-  });
+//   });
 }
 
 // function compileUser(){
@@ -72,6 +75,33 @@ function compilePosts() {
 //         </section>
 //         `
 //     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
+// }//     })
 // }//     })
 // }//     })
 // }
