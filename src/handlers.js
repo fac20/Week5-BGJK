@@ -44,7 +44,7 @@ function createUser(request, response) {
     const searchParams = new URLSearchParams(body);
     // console.log(searchParams);
     const data = Object.fromEntries(searchParams);
-    // console.log(data);
+    console.log("data = ", data);
     model
       .createUser(data)
       .then(() => {
@@ -58,8 +58,8 @@ function createUser(request, response) {
       });
   });
 
-  response.writeHead(404, { "content-type": "text/html" });
-  response.end("<h1>Oops, nothing for you over here</h1>");
+  // response.writeHead(404, { "content-type": "text/html" });
+  // response.end("<h1>Oops, nothing for you over here</h1>");
 }
 
 // --------Public handler----------------
