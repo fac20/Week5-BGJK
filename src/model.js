@@ -5,6 +5,11 @@ function getUsers() {
   return db.query("SELECT * FROM users").then(result => result.rows);
 }
 
+// get posts from posts table
+function getPosts() {
+  return db.query("SELECT * FROM posts").then(result => result.rows);
+}
+
 // Insert new user into user array
 function createUser(data) {
   // User information taken from form placed in variable
@@ -19,7 +24,7 @@ function createUser(data) {
 }
 
 // Insert new post into posts table
-function createPosts(data) {
+function createPost(data) {
   // Get the primary key of the user and place it in array with the post text content
   const postValues = [
     //db.query(`SELECT id FROM users WHERE username = ${data.username}`),
@@ -32,5 +37,4 @@ function createPosts(data) {
     postValues
   );
 }
-
-module.exports = { getUsers, createUser, createPost };
+module.exports = { getUsers, createUser, createPost, getPosts };

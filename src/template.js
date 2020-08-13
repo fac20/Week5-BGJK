@@ -1,19 +1,17 @@
-const model = require("./model")
+const model = require("./model");
 
 // function createarticle(something) {
 //     return `template ${something } literal`
 // }
 
-
 function compileSkeleton(content) {
-    return `
+  return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Survive the virus</title>
-        <link rel='shortcut icon' href='https://ps.w.org/covid-19/assets/icon.svg?rev=2262770' type='image/x-icon'> 
+        <title>Spill.....</title>
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
         <link href="public/styles.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
@@ -21,56 +19,43 @@ function compileSkeleton(content) {
     <body>
         <h1 class="heading-logo">SRV|VRS</h1>
         <main>
-            <form>
+            <form 
+            method ='POST' action = '/'
+            >
+                <label for="name">Name :</label>
+                <input type="text" id="name" name="name" required>
+                <label for="location">Location :</label>
+                <input type="text" id="location" name="location" required>
+                <label for="post">Post :</label>
+                <input type="text" id="post" name="post" required>
+                <button type='submit'>SUBMIT</button>
+            </form> 
+           ${content}
 
-            ${content}
-            </form>
         </main>
         <script src="public/main.js"></script>
         <script src="https://kit.fontawesome.com/8edb3d78c9.js" crossorigin="anonymous"></script>
     </body>
     </html>
     `;
-    
 }
 
-
-
-
-
-function compilePosts() {
-    model.getPosts().then( posts => {
-        let postsHtml = posts.map( post => {
-           `
-            <article class="post">
-                <p>Written by ${post.userid}</p>       
-                <p>${post.text_content}</p>    
-            </article>  
-           `.join("");
-        })
-    })
+function compileUsers() {
+  // let usersHtml = users
+  //   .map(user => {
+  //     `
+  //           <article class="post">
+  //               <p>Written by ${user.id}</p>
+  //               <p>${user.location}</p>
+  //           </article>
+  //   `;
+  //   })
+  //   .join("");
+  return `<h1>TESTTESTTEST</h1>`;
 }
 
-// function compileUser(){
-//     model.getUsers().then(users => {
-//         let usersHtml = users.map( user => {
-//            `
-//            <p class = "user" >
-//             Posted by: ${user.username}
-//            </p>  
-//            `
-//         })
-//     })
-// }
+function compileHome() {
+  return compileSkeleton(compileUsers());
+}
 
-
-// function compileCards(){
-//     usersPosts.map(userpost => {
-//         `
-//         <section class = "card"
-//            <article class = "card__post" >${post}</article> 
-//            <p class = "user" >Posted by: ${user}</p>
-//         </section>
-//         `
-//     })
-// }
+module.exports = compileHome;
