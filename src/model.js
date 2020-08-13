@@ -19,7 +19,7 @@ function createUser(data) {
 }
 
 // Insert new post into posts table
-function createPost(data) {
+function createPosts(data) {
   // Get the primary key of the user and place it in array with the post text content
   const postValues = [
     //db.query(`SELECT id FROM users WHERE username = ${data.username}`),
@@ -32,3 +32,4 @@ function createPost(data) {
     postValues
   );
 }
+module.exports = { getUsers, createUsers, creatPosts };

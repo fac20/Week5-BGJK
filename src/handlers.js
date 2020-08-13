@@ -18,9 +18,31 @@ function home(request, response) {
 }
 
 // --------Missing handler---------------
-function missing(response, request) {
+function missing(request, response) {
   response.writeHead(200, { "content-type": "text/html" });
   response.end(`<h1>Oops, nothing for you over here</h1>`);
 }
 
-module.exports = { home, missing };
+// --------Create User Handler---------------
+function createUser(request, response) {
+  let body = "";
+  request.on("data", chunk => (body += chunk));
+  request.on("end", () => {
+    const searchParams = new URLSearchParams(body);
+    // console.log(searchParams);
+    const data = Object.fromEntries(searchParams);
+    // console.log(data);
+    model
+      .createUsers(data)
+      .then(() => {
+        response.writeHead(302, { location: "/" });
+        response.end();
+      })
+      .catch(error => {
+        console.error(error);
+        response.writeHead(500, { "content-type": "text/html" });
+        response.end(`<h1>No connection no beans</h1>`);
+      });
+  });
+}
+module.exports = { home, missing, createUser };
