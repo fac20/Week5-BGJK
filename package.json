@@ -14,7 +14,7 @@
     "tape": "^5.0.1"
   },
   "scripts": {
-    "test": "node test.js | tap-spec",
+    "test": "NODE_ENV=test tape 'src/tests/*' | tap-spec",
     "start": "node server.js",
     "dev": "nodemon"
   },
