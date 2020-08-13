@@ -20,12 +20,15 @@ function compileSkeleton(content) {
     <body>
         <h1 class="heading-logo">SRV|VRS</h1>
         <main>
-
             <form>
-                <label for= "name"> Name </label>
-                <input type="text" id= "name" required>
-            </form>
-            ${content}
+                <label for="name">Name :</label>
+                <input type="text" id="name" name="name" required>
+                <label for="location">Location :</label>
+                <input type="text" id="location" name="location" required>
+                <label for="post">Post :</label>
+                <input type="text" id="post" name="post" required>
+            </form> 
+           ${content}
 
         </main>
         <script src="public/main.js"></script>
@@ -37,16 +40,14 @@ function compileSkeleton(content) {
 
 function compilePosts() {
   model.getPosts().then(posts => {
-    let postsHtml = posts
-      .map(post => {
-        `
+    let postsHtml = posts.map(post => {
+      `
             <article class="post">
                 <p>Written by ${post.userid}</p>       
                 <p>${post.text_content}</p>    
             </article>  
-           `;
-      })
-      .join("");
+           
+    })`.join("");
   });
 }
 
@@ -71,4 +72,6 @@ function compilePosts() {
 //         </section>
 //         `
 //     })
+// }//     })
+// }//     })
 // }
