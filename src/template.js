@@ -20,8 +20,7 @@ function compileSkeleton(content) {
         <h1 class="heading-logo">SRV|VRS</h1>
         <main>
             <form 
-            method ='POST' action = '/'
-            >
+            method ='POST' action ='/submit'>
                 <label for="name">Name :</label>
                 <input type="text" id="name" name="name" required>
                 <label for="location">Location :</label>
