@@ -11,8 +11,7 @@ function compileSkeleton(content) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Survive the virus</title>
-        <link rel='shortcut icon' href='https://ps.w.org/covid-19/assets/icon.svg?rev=2262770' type='image/x-icon'> 
+        <title>Spill.....</title>
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
         <link href="public/styles.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
@@ -21,7 +20,7 @@ function compileSkeleton(content) {
         <h1 class="heading-logo">SRV|VRS</h1>
         <main>
             <form 
-            method ='POST'
+            method ='POST' action = '/'
             >
                 <label for="name">Name :</label>
                 <input type="text" id="name" name="name" required>
@@ -42,66 +41,21 @@ function compileSkeleton(content) {
 }
 
 function compileUsers() {
-//   model.getPosts().then(posts => {
-    let usersHtml = users.map(user => {
-      `
-            <article class="post">
-                <p>Written by ${user.id}</p>       
-                <p>${user.location}</p>    
-            </article>  
-           
-    })`.join("");
-//   });
+  // let usersHtml = users
+  //   .map(user => {
+  //     `
+  //           <article class="post">
+  //               <p>Written by ${user.id}</p>
+  //               <p>${user.location}</p>
+  //           </article>
+  //   `;
+  //   })
+  //   .join("");
+  return `<h1>TESTTESTTEST</h1>`;
 }
 
-// function compileUser(){
-//     model.getUsers().then(users => {
-//         let usersHtml = users.map( user => {
-//            `
-//            <p class = "user" >
-//             Posted by: ${user.username}
-//            </p>
-//            `
-//         })
-//     })
-// }
+function compileHome() {
+  return compileSkeleton(compileUsers());
+}
 
-// function compileCards(){
-//     usersPosts.map(userpost => {
-//         `
-//         <section class = "card"
-//            <article class = "card__post" >${post}</article>
-//            <p class = "user" >Posted by: ${user}</p>
-//         </section>
-//         `
-//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }//     })
-// }
+module.exports = compileHome;

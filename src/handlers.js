@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const model = require("./model");
+const compileHome = require("./template");
 
 // -------Home Handler------------------
 function home(request, response) {
@@ -9,9 +10,10 @@ function home(request, response) {
   // request.on("data", chunk => (body += chunk));
   // // after getting the data then add it into our template
   model.getUsers().then(users => {
-    template.compileSkeleton(template.compilePosts());
+    console.log(users);
+    // template.compileSkeleton(template.compileUsers());
+    const html = compileHome();
     response.writeHead(200, { "content-type": "text/html" });
-    const html = template.compileSkeleton(template.compilePosts());
     response.end(html);
   });
 
@@ -44,7 +46,7 @@ function createUser(request, response) {
     const data = Object.fromEntries(searchParams);
     // console.log(data);
     model
-      .createUsers(data)
+      .createUser(data)
       .then(() => {
         response.writeHead(302, { location: "/" });
         response.end();
