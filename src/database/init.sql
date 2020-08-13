@@ -15,7 +15,7 @@ CREATE TABLE posts
 );
 
 INSERT INTO users VALUES
-    (1, "Zi_You_in_Hell", "Behind you"),
+    (1, "Zi_You_in_Hell", "In Hell"),
     (2, "jhart5", "A dark basement"),
     (3, "Ephivecent", "Nowhere"),
     (4, "Khadija", "The Matrix")
