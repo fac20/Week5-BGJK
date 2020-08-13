@@ -26,9 +26,11 @@ function createPost(data) {
     createUser(data),
     data.content,
   ];
-  // Place the post text into the posts table along side the user_id foregn key
+  // Place the post text into the posts table along side the user_id foreign key
   return db.query(
     "INSERT INTO posts(user_id, text_content) VALUES($1, $2)",
     postValues
   );
 }
+
+module.exports = { getUsers, createUser, createPost };
