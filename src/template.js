@@ -22,7 +22,8 @@ function compileSkeleton(content) {
         <main>
 
             <form>
-
+                <label for= "name"> Name </label>
+                <input type="text" id= "name" required>
             </form>
             ${content}
 
