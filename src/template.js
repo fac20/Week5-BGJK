@@ -1,12 +1,11 @@
-const model = require("./model")
+const model = require("./model");
 
 // function createarticle(something) {
 //     return `template ${something } literal`
 // }
 
-
 function compileSkeleton(content) {
-    return `
+  return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -21,34 +20,33 @@ function compileSkeleton(content) {
     <body>
         <h1 class="heading-logo">SRV|VRS</h1>
         <main>
+
             <form>
 
-            ${content}
             </form>
+            ${content}
+
         </main>
         <script src="public/main.js"></script>
         <script src="https://kit.fontawesome.com/8edb3d78c9.js" crossorigin="anonymous"></script>
     </body>
     </html>
     `;
-    
 }
 
-
-
-
-
 function compilePosts() {
-    model.getPosts().then( posts => {
-        let postsHtml = posts.map( post => {
-           `
+  model.getPosts().then(posts => {
+    let postsHtml = posts
+      .map(post => {
+        `
             <article class="post">
                 <p>Written by ${post.userid}</p>       
                 <p>${post.text_content}</p>    
             </article>  
-           `.join("");
-        })
-    })
+           `;
+      })
+      .join("");
+  });
 }
 
 // function compileUser(){
@@ -57,18 +55,17 @@ function compilePosts() {
 //            `
 //            <p class = "user" >
 //             Posted by: ${user.username}
-//            </p>  
+//            </p>
 //            `
 //         })
 //     })
 // }
 
-
 // function compileCards(){
 //     usersPosts.map(userpost => {
 //         `
 //         <section class = "card"
-//            <article class = "card__post" >${post}</article> 
+//            <article class = "card__post" >${post}</article>
 //            <p class = "user" >Posted by: ${user}</p>
 //         </section>
 //         `
