@@ -2,7 +2,7 @@
   "name": "week5-bgjk",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "src/server.js",
   "dependencies": {},
   "devDependencies": {
     "nodemon": "^2.0.4",
