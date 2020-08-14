@@ -17,7 +17,7 @@ function compileSkeleton(content) {
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1 class="heading-logo">SRV|VRS</h1>
+        <h1 class="heading-logo">Spill Your Beans</h1>
         <main>
             <form 
             method ='POST' action ='/submit'>
