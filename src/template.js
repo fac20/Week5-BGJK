@@ -15,6 +15,7 @@ function compileSkeleton(content) {
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
         <link href="public/style.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="public/favicon.svg">
     </head>
     <body>
         <h1 class="heading-logo">Spill Your Beans</h1>
