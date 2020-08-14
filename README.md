@@ -17,9 +17,9 @@ Spill your beans a site for you to spill your toughts whether cute, angry or fun
 
 ----
 
-<img src='https://user-images.githubusercontent.com/60614102/90199227-02e74800-ddcc-11ea-9cc6-33b0924e66e8.png' width='600' height='350' title='readme img'>
-<img src='https://user-images.githubusercontent.com/60614102/90199241-0d094680-ddcc-11ea-9d0a-e82204e33074.png' width='400' height='450' title='readme img'>
-<img src='https://user-images.githubusercontent.com/60614102/90199255-14c8eb00-ddcc-11ea-823b-8d1b1ef00cc6.png' width='600' height='350' title='readme img'>
+![Website on desktop screeen](https://user-images.githubusercontent.com/59174800/90218905-d7c91c80-ddfc-11ea-9875-41f28094a162.png)
+![Website on mobile device vertically](https://user-images.githubusercontent.com/59174800/90220273-cb928e80-ddff-11ea-8056-6986e45b32cf.png)
+![Website on mobile view horizontally](https://user-images.githubusercontent.com/59174800/90220307-dd743180-ddff-11ea-85e4-c2a39d4fb43e.png)
 
 
 ## Core
