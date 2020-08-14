@@ -13,7 +13,8 @@ function getPosts() {
 // Insert new user into user array
 function createUser(data) {
   // User information taken from form placed in variable
-  const userValues = [data.username, data.location];
+  console.log(data.username);
+  const userValues = [data.name, data.location];
   //  Place the new user data into the table with a db.query
   return db
     .query(

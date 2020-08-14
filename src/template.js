@@ -1,5 +1,5 @@
 const model = require("./model");
-
+const handlers = require("./handlers");
 // function createarticle(something) {
 //     return `template ${something } literal`
 // }
@@ -13,7 +13,7 @@ function compileSkeleton(content) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spill.....</title>
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
-        <link href="public/styles.css" rel="stylesheet">
+        <link href="public/style.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -39,8 +39,8 @@ function compileSkeleton(content) {
     `;
 }
 
-function compileUsers() {
-  // let usersHtml = users
+function compileUsers(user) {
+  // return user
   //   .map(user => {
   //     `
   //           <article class="post">
@@ -50,6 +50,7 @@ function compileUsers() {
   //   `;
   //   })
   //   .join("");
+
   return `<h1>TESTTESTTEST</h1>`;
 }
 

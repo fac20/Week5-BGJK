@@ -67,6 +67,9 @@ const types = {
   html: "text/html",
   css: "text/css",
   js: "application/javascript",
+  png: "image/png",
+  svg: "image/svg+xml",
+  ico: "image/x-icon",
 };
 
 function public(request, response) {
@@ -87,4 +90,4 @@ function public(request, response) {
     }
   });
 }
-module.exports = { home, missing, createUser };
+module.exports = { home, missing, createUser, public };
