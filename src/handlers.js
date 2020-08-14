@@ -7,7 +7,6 @@ const template = require("./template");
 function home(request, response) {
   model.getUsers().then(users => {
     const html = template.compileHome(users);
-    console.log("html", html)
     response.writeHead(200, { "content-type": "text/html" });
     response.end(html);
   });
