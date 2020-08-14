@@ -29,7 +29,7 @@ function compileSkeleton(content) {
                 <input type="text" id="post" name="post" required>
                 <button type='submit'>SUBMIT</button>
             </form> 
-           ${content}
+          ${content}
 
         </main>
         <script src="public/main.js"></script>
@@ -44,8 +44,8 @@ function compileUsers(usersArray) {
     .map(user => {
       return `
           <article class="post">
-              <p>Written by ${user.id}</p>
-              <p>${user.location}</p>
+              <p>Written by: ${user.id}</p>
+              <p>Inhabitant of: ${user.location}</p>
           </article>
   `;
     })
