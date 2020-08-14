@@ -10,7 +10,7 @@ function home(request, response) {
   // request.on("data", chunk => (body += chunk));
   // // after getting the data then add it into our template
   model.getUsers().then(users => {
-    console.log(users);
+   // console.log(users);
     // template.compileSkeleton(template.compileUsers());
     const html = compileHome();
     response.writeHead(200, { "content-type": "text/html" });
@@ -44,7 +44,7 @@ function createUser(request, response) {
     const searchParams = new URLSearchParams(body);
     // console.log(searchParams);
     const data = Object.fromEntries(searchParams);
-    console.log("data = ", data);
+    //console.log("data = ", data);
     model
       .createUser(data)
       .then(() => {
