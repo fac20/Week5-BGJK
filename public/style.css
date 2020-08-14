@@ -33,10 +33,24 @@ button {
   color: var(--font-color);
 }
 
-#post {
-  width: 50vw;
-  height: 20vh;
+.post {
+  margin: 2rem 2rem;
+  width: 70vw;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: 0.9s;
+  padding: 2rem;
+  box-shadow: 0px 0px 2px 2px hsla(30, 100%, 77%, 0.568);
+  /* background-color: var(-white); */
+  /* width: 50vw; */
+  height: 10vh;
 }
+
+.post:hover {
+  box-shadow: 0px 0px 8px 7px hsla(30, 100%, 77%, 0.445), -5px -5px 30px 7px hsla(30, 100%, 77%, 0.493);
+
+}
+
 button {
   color: var(--font-color);
 }
