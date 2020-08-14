@@ -1,33 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const model = require("./model");
-const compileHome = require("./template");
+const template = require("./template");
 
 // -------Home Handler------------------
 function home(request, response) {
-  // let body = "";
-
-  // request.on("data", chunk => (body += chunk));
-  // // after getting the data then add it into our template
   model.getUsers().then(users => {
-    console.log(users);
-    // template.compileSkeleton(template.compileUsers());
-    const html = compileHome();
+    const html = template.compileHome(users);
     response.writeHead(200, { "content-type": "text/html" });
     response.end(html);
   });
-
-  // const filePath = path.join(__dirname, "..", "public", "index.html");
-  // fs.readFile(filePath, (error, file) => {
-  //   if (error) {
-  //     console.error(error);
-  //     response.writeHead(200, { "content-type": "text/html" });
-  //     response.end(`<h1>Not Found</h1>`);
-  //   } else {
-  //     response.writeHead(200, { "content-type": "text/html" });
-  //     response.end(file);
-  //   }
-  //});
 }
 
 // --------Missing handler---------------
