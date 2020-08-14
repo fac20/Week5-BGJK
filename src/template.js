@@ -21,8 +21,8 @@ function compileSkeleton(content) {
         <main>
             <form 
             method ='POST' action ='/submit'>
-                <label for="name">Name :</label>
-                <input type="text" id="name" name="name" required>
+                <label for="username">Name :</label>
+                <input type="text" id="username" name="username" required>
                 <label for="location">Location :</label>
                 <input type="text" id="location" name="location" required>
                 <label for="post">Post :</label>
