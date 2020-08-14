@@ -39,23 +39,22 @@ function compileSkeleton(content) {
     `;
 }
 
-function compileUsers(user) {
-  // return user
-  //   .map(user => {
-  //     `
-  //           <article class="post">
-  //               <p>Written by ${user.id}</p>
-  //               <p>${user.location}</p>
-  //           </article>
-  //   `;
-  //   })
-  //   .join("");
+function compileUsers(usersArray) {
+  return usersArray.map(user => {
+    return `
+          <article class="post">
+              <p>Written by ${user.id}</p>
+              <p>${user.location}</p>
+          </article>
+  `;
+  })
+    .join("");
 
-  return `<h1>TESTTESTTEST</h1>`;
+  // return `<h1>TESTTESTTEST</h1>`;
 }
 
-function compileHome() {
-  return compileSkeleton(compileUsers());
+function compileHome(something) {
+  return compileSkeleton(compileUsers(something));
 }
 
-module.exports = compileHome;
+module.exports = { compileHome };
