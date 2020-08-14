@@ -1,6 +1,6 @@
 const model = require("./model");
 const handlers = require("./handlers");
-// function createarticle(something) {
+// function createArticle(something) {
 //     return `template ${something } literal`
 // }
 
@@ -21,15 +21,15 @@ function compileSkeleton(content) {
         <main>
             <form 
             method ='POST' action ='/submit'>
-                <label for="name">Name :</label>
-                <input type="text" id="name" name="name" required>
+                <label for="username">Name :</label>
+                <input type="text" id="username" name="username" required>
                 <label for="location">Location :</label>
                 <input type="text" id="location" name="location" required>
                 <label for="post">Post :</label>
                 <input type="text" id="post" name="post" required>
                 <button type='submit'>SUBMIT</button>
             </form> 
-           ${content}
+          ${content}
 
         </main>
         <script src="public/main.js"></script>
@@ -40,16 +40,16 @@ function compileSkeleton(content) {
 }
 
 function compileUsers(usersArray) {
-  return usersArray.map(user => {
-    return `
+  return usersArray
+    .map(user => {
+      return `
           <article class="post">
               <p>Written by: ${user.id}</p>
               <p>Inhabitant of: ${user.location}</p>
           </article>
   `;
-  })
+    })
     .join("");
-
 }
 
 function compileHome(something) {
