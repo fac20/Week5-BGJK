@@ -1,7 +1,6 @@
 const test = require("tape");
 const build = require("../database/build.js");
-const { getUsers, createUserAndPost, getPosts, getPostInfo } = require("../model");
-
+const { getUsers, createUser, getPosts, createPost } = require("../model");
 test("Can get users from database", t => {
   build().then(() => {
     getUsers()
@@ -17,28 +16,27 @@ test("Can get users from database", t => {
       });
   });
 });
-
-// test("Can add user to database", t => {
-//   build().then(() => {
-//     const data = {
-//       username: "Harry6969",
-//       location: "Your mom",
-//       content: "Blaze it everyday!",
-//     };
-//     createUserAndPost(data)
-//       .then(users => {
-//         const latestUser = users[users.length - 1];
-//         t.equal(latestUser.location, "Your mom");
-//         t.equal(latestUser.username, "Harry6969");
-//         t.end();
-//       })
-//       .catch(error => {
-//         t.error(error);
-//         t.end();
-//       });
-//   });
-// });
-
+test("Can add user to database", t => {
+  build().then(() => {
+    const data = {
+      username: "Harry6969",
+      location: "Your mom",
+      content: "Blaze it everyday!",
+    };
+    createUser(data)
+      .then(getUsers)
+      .then(users => {
+        const latestUser = users[users.length - 1];
+        t.equal(latestUser.location, "Your mom");
+        t.equal(latestUser.username, "Harry6969");
+        t.end();
+      })
+      .catch(error => {
+        t.error(error);
+        t.end();
+      });
+  });
+});
 test("Can get posts from database", t => {
   build().then(() => {
     getPosts()
@@ -54,7 +52,6 @@ test("Can get posts from database", t => {
       });
   });
 });
-
 test("Can add posts to database", t => {
   const data = {
     username: "Harry6969",
@@ -62,15 +59,12 @@ test("Can add posts to database", t => {
     content: "Blaze it everyday!",
   };
   build()
-    .then(createUserAndPost(data))
-    .then(getPostInfo) 
+    .then(createPost(data))
+    .then(getPosts)
     .then(posts => {
-      console.log(posts);
       const latestPost = posts[posts.length - 1];
-      t.equal(latestPost.user_id, 5);
-      t.equal(latestPost.text_content, "Blaze it everyday!");
-      ///console.log(posts)
-      //console.log("fish")
+      t.equal(posts.user_id, 5);
+      t.equal(posts.text_content, "Blaze it everyday!");
       t.end();
     })
     .catch(error => {
