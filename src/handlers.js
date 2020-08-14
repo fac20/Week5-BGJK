@@ -1,33 +1,21 @@
 const fs = require("fs");
 const path = require("path");
 const model = require("./model");
-const compileHome = require("./template");
+const template = require("./template");
 
 // -------Home Handler------------------
 function home(request, response) {
-  // let body = "";
-
-  // request.on("data", chunk => (body += chunk));
-  // // after getting the data then add it into our template
   model.getUsers().then(users => {
+<<<<<<< HEAD
    // console.log(users);
     // template.compileSkeleton(template.compileUsers());
     const html = compileHome();
+=======
+    const html = template.compileHome(users);
+>>>>>>> 40196f3d34430b2af41744951c4054fb963f4288
     response.writeHead(200, { "content-type": "text/html" });
     response.end(html);
   });
-
-  // const filePath = path.join(__dirname, "..", "public", "index.html");
-  // fs.readFile(filePath, (error, file) => {
-  //   if (error) {
-  //     console.error(error);
-  //     response.writeHead(200, { "content-type": "text/html" });
-  //     response.end(`<h1>Not Found</h1>`);
-  //   } else {
-  //     response.writeHead(200, { "content-type": "text/html" });
-  //     response.end(file);
-  //   }
-  //});
 }
 
 // --------Missing handler---------------
@@ -67,6 +55,9 @@ const types = {
   html: "text/html",
   css: "text/css",
   js: "application/javascript",
+  png: "image/png",
+  svg: "image/svg+xml",
+  ico: "image/x-icon",
 };
 
 function public(request, response) {
@@ -87,4 +78,4 @@ function public(request, response) {
     }
   });
 }
-module.exports = { home, missing, createUser };
+module.exports = { home, missing, createUser, public };
