@@ -13,8 +13,7 @@ function getPosts() {
 // Insert new user into user array
 function createUser(data) {
   // User information taken from form placed in variable
-  console.log(data.username);
-  const userValues = [data.name, data.location];
+  const userValues = [data.username, data.location];
   //  Place the new user data into the table with a db.query
   return db
     .query(
@@ -32,6 +31,7 @@ function createPost(data) {
     createUser(data),
     data.content,
   ];
+  console.log(postValues);
   // Place the post text into the posts table along side the user_id foreign key
   return db.query(
     "INSERT INTO posts(user_id, text_content) VALUES($1, $2)",

@@ -1,6 +1,6 @@
 const model = require("./model");
 const handlers = require("./handlers");
-// function createarticle(something) {
+// function createArticle(something) {
 //     return `template ${something } literal`
 // }
 
@@ -40,17 +40,16 @@ function compileSkeleton(content) {
 }
 
 function compileUsers(usersArray) {
-  return usersArray.map(user => {
-    return `
+  return usersArray
+    .map(user => {
+      return `
           <article class="post">
               <p>Written by ${user.id}</p>
               <p>${user.location}</p>
           </article>
   `;
-  })
+    })
     .join("");
-
-  // return `<h1>TESTTESTTEST</h1>`;
 }
 
 function compileHome(something) {
