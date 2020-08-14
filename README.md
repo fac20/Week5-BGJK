@@ -8,7 +8,7 @@ If cloning the app to run it you need to enter the follwing to reach each page:
 - to run your code people should clone your repo, and then run npm install.
 - npm run dev 
 - you need access to the .env table to check the tables through psql. 
-- website has been updated with css changes to create user handler that allows us to submit to our database but it's in a branch yet to be merged.
+- User can input data which can be submitted and then stored in our database
 - please message if you have any questions. 
 
 
@@ -25,7 +25,6 @@ Spill your beans a site for you to spill your toughts whether cute, angry or fun
 ## Core
 - As a user, I want to: submit information to your site for anyone to see
 - As a user, I want to: come back to your site later and see what I posted is still there
-- Since this project is open-ended you'll need to write your own more specific user stories once you know what you want to build.
 
 ## Acceptance Criteria
 - A form for users to submit data
@@ -42,7 +41,7 @@ Spill your beans a site for you to spill your toughts whether cute, angry or fun
 - GitHub Actions CI setup to run your tests when you push
 
 # AUTHORS
-- Khadija 
-- Josh
-- Azizi 
-- Ephie 
+- Khadija (Deployment)
+- Josh (Design)
+- Azizi (Quality)
+- Ephie (Project Facilitator)
